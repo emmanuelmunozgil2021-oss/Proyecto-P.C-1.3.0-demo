@@ -1,0 +1,154 @@
+/* --- Reset global --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Arial,  sans-serif;
+    
+}
+
+/* Fondo general de la página */
+body {
+    background-color: #faf9f8; 
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Barra de navegación pegada arriba y abarcando toda la pantalla */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px 40px;
+    background-color: #f75d11;
+    box-sizing: border-box;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo { 
+    width: 40px; 
+    height: 40px; 
+}
+
+.brand-name { 
+    font-weight: bold; 
+    font-size: 1.2rem; 
+    color: #fcf8f8; 
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.login-link { 
+    text-decoration: none; 
+    color: #fcf9f9; 
+    font-weight: 500; 
+}
+
+.register-btn {
+    background: linear-gradient(90deg, #062f62, #022d6d);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Tarjeta del login centrada y separada de la barra */
+.login-card {
+    background-color: #ffffff; 
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 400px;
+    margin: 40px auto 0 auto; /* 40px de espacio arriba respecto a la barra y 'auto' para centrar */
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.login-card h2 {
+    margin-top: 0;
+    color: #0f0f0f;
+}
+
+.login-card p {
+    font-size: 13px;
+    color: #0a0a0a;
+    margin-bottom: 20px;
+}
+
+.campo {
+    margin-bottom: 15px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #0c0c0c;
+}
+
+.campo input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.login-divider {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 25px 0 15px 0;
+}
+
+.admin-container {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.boton-azul-personal, 
+.boton-admin {
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    color: white;
+    padding: 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.boton-azul-personal {
+    background-color: #007bff; 
+}
+
+.boton-azul-personal:hover {
+    background-color: #0056b3; 
+}
+
+.boton-admin {
+    background-color: #05bb1a; 
+}
+
+.boton-admin:hover {
+    background-color: #427e06; 
+}

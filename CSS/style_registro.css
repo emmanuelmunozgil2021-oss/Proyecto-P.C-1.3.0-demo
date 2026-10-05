@@ -1,0 +1,63 @@
+/* Estilos exclusivos para la página de registro */
+.register-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 500px;
+    margin: 40px auto;
+}
+
+.register-card h2 { 
+    margin-bottom: 5px; 
+    color: #333; 
+}
+
+.register-card p { 
+    font-size: 13px; 
+    color: #666; 
+    margin-bottom: 20px; 
+}
+
+.form-group { 
+    margin-bottom: 15px; 
+}
+
+.form-group label { 
+    display: block; 
+    font-weight: bold; 
+    margin-bottom: 5px; 
+    font-size: 14px; 
+    color: #444; 
+}
+
+.form-group input { 
+    width: 100%; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+}
+
+.btn-registro {
+    width: 100%;
+    background-color: #2ecc71;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-registro:hover { 
+    background-color: #27ae60; 
+}
+
+.login-link-text { 
+    text-align: center; 
+    margin-top: 15px; 
+    font-size: 13px; 
+}

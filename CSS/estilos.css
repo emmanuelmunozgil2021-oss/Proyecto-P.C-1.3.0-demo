@@ -1,0 +1,171 @@
+/* PANEL/CSS/estilos.css */
+body { 
+    font-family: 'Segoe UI', sans-serif; 
+
+    margin: 0; 
+    padding: 20px; 
+}
+.container {
+    max-width: 800px; 
+    margin: auto; 
+}
+.header { 
+    background: #f75d11; 
+    color: white; 
+    padding: 20px; 
+    border-radius: 10px; 
+    margin-bottom: 20px; 
+}
+
+.grid { 
+    display: flex; 
+    gap: 20px; 
+}
+
+.card { 
+    background: white;
+    padding: 25px; 
+    border-radius: 15px; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+    flex: 1; 
+    text-align: center; 
+}
+
+.dias { 
+    font-size: 3em; 
+    color: #27ae60; 
+    font-weight: bold; 
+    margin: 10px 0; 
+}
+
+.btn { 
+    display: block; 
+    background: #3498db; 
+    color: white; 
+    padding: 10px; 
+    text-decoration: none; 
+    border-radius: 5px; 
+    margin-top: 10px; 
+    transition: 0.3s; 
+}
+
+.btn:hover { 
+    background: #2980b9; 
+}
+
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Asegura que el padding no rompa el ancho */
+}
+
+.btn {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+.link-volver {
+    display: block;
+    margin-top: 15px;
+    color: #7f8c8d;
+    text-decoration: none;
+}
+
+.link-volver:hover {
+    color: #34495e;
+}
+
+:root {
+    --primary: #2563eb;
+    --bg: #f8fafc;
+    --text: #1e293b;
+    --card-bg: #ffffff;
+}
+
+
+
+.navbar {
+    background: #1e293b;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.panel-container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+.balance-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    text-align: center;
+}
+
+.balance-item .number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.actions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.action-box {
+    border: 1px solid #e2e8f0;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s;
+}
+
+.action-box:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    margin: 0.5rem 0;
+    box-sizing: border-box;
+}
+
+.btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}

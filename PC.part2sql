@@ -1,0 +1,219 @@
+/*M!999999\- enable the sandbox mode */ 
+-- MariaDB dump 10.19  Distrib 10.11.14-MariaDB, for debian-linux-gnu (x86_64)
+--
+-- Host: localhost    Database: proteccion_civil
+-- ------------------------------------------------------
+-- Server version	10.11.14-MariaDB-0ubuntu0.24.04.1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `Control_vacaciones`
+--
+
+DROP TABLE IF EXISTS `Control_vacaciones`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `Control_vacaciones` (
+  `id_control` int(11) NOT NULL AUTO_INCREMENT,
+  `id_usuario` int(11) NOT NULL,
+  `anos_service` int(11) DEFAULT NULL,
+  `dias_totales_disponibles` int(11) DEFAULT NULL,
+  `dias_disfrutados` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id_control`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Control_vacaciones`
+--
+
+LOCK TABLES `Control_vacaciones` WRITE;
+/*!40000 ALTER TABLE `Control_vacaciones` DISABLE KEYS */;
+INSERT INTO `Control_vacaciones` VALUES
+(1,4,3,15,5),
+(2,8,1,25,5),
+(3,13,3,12,0),
+(4,15,3,8,12);
+/*!40000 ALTER TABLE `Control_vacaciones` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Departamentos`
+--
+
+DROP TABLE IF EXISTS `Departamentos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `Departamentos` (
+  `id_departamento` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre_departamento` varchar(100) NOT NULL,
+  PRIMARY KEY (`id_departamento`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Departamentos`
+--
+
+LOCK TABLES `Departamentos` WRITE;
+/*!40000 ALTER TABLE `Departamentos` DISABLE KEYS */;
+INSERT INTO `Departamentos` VALUES
+(1,'Recursos Humanos'),
+(2,'Operaciones'),
+(3,'Logística');
+/*!40000 ALTER TABLE `Departamentos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Solicitudes_Vacaciones`
+--
+
+DROP TABLE IF EXISTS `Solicitudes_Vacaciones`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `Solicitudes_Vacaciones` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_usuario` bigint(20) unsigned NOT NULL,
+  `fecha_inicio` date NOT NULL,
+  `fecha_fin` date NOT NULL,
+  `estado` varchar(20) DEFAULT 'pendiente',
+  `fecha_creacion` timestamp NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Solicitudes_Vacaciones`
+--
+
+LOCK TABLES `Solicitudes_Vacaciones` WRITE;
+/*!40000 ALTER TABLE `Solicitudes_Vacaciones` DISABLE KEYS */;
+INSERT INTO `Solicitudes_Vacaciones` VALUES
+(1,15,'2026-09-01','2026-09-05','aprobada','2026-08-22 00:47:04');
+/*!40000 ALTER TABLE `Solicitudes_Vacaciones` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Usuarios`
+--
+
+DROP TABLE IF EXISTS `Usuarios`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `Usuarios` (
+  `id_usuario` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(20) NOT NULL,
+  `apellido` varchar(20) NOT NULL,
+  `usuario` varchar(20) NOT NULL,
+  `contrasena` varchar(255) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `departamento` varchar(100) DEFAULT NULL,
+  `id_departamento` int(11) DEFAULT NULL,
+  `rol` varchar(20) DEFAULT 'empleado',
+  `cedula` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id_usuario`),
+  UNIQUE KEY `usuario` (`usuario`),
+  UNIQUE KEY `email` (`email`),
+  UNIQUE KEY `unique_cedula` (`cedula`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Usuarios`
+--
+
+LOCK TABLES `Usuarios` WRITE;
+/*!40000 ALTER TABLE `Usuarios` DISABLE KEYS */;
+INSERT INTO `Usuarios` VALUES
+(14,'David','Muñoz','admin','admin','ema@gmail.com','Recursos Humanos',NULL,'admin','32007561'),
+(15,'Isaac','gil','isaac','1234','isaac@gmail.com','Seguridad',NULL,'funcionario','32007381'),
+(16,'Diego','Hidalgo','diego123','12345678','diego@gmail.com','recursos humanos',NULL,'funcionario','32007385');
+/*!40000 ALTER TABLE `Usuarios` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `constancias_emitidas`
+--
+
+DROP TABLE IF EXISTS `constancias_emitidas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `constancias_emitidas` (
+  `id_constancia` int(11) NOT NULL AUTO_INCREMENT,
+  `cedula_funcionario` varchar(20) DEFAULT NULL,
+  `fecha_emision` date DEFAULT NULL,
+  `motivo` varchar(100) DEFAULT NULL,
+  `codigo_verificacion` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id_constancia`),
+  KEY `cedula_funcionario` (`cedula_funcionario`),
+  CONSTRAINT `constancias_emitidas_ibfk_1` FOREIGN KEY (`cedula_funcionario`) REFERENCES `Funcionarios` (`cedula`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `constancias_emitidas`
+--
+
+LOCK TABLES `constancias_emitidas` WRITE;
+/*!40000 ALTER TABLE `constancias_emitidas` DISABLE KEYS */;
+/*!40000 ALTER TABLE `constancias_emitidas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `peticiones_vacaciones`
+--
+
+DROP TABLE IF EXISTS `peticiones_vacaciones`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `peticiones_vacaciones` (
+  `id_peticion` int(11) NOT NULL AUTO_INCREMENT,
+  `id_usuario` int(11) NOT NULL,
+  `fecha_solicitud` date NOT NULL,
+  `fecha_inicio` date NOT NULL,
+  `fecha_fin` date NOT NULL,
+  `estado_peticion` varchar(30) DEFAULT 'Pendiente',
+  `observaciones` text DEFAULT NULL,
+  PRIMARY KEY (`id_peticion`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `peticiones_vacaciones`
+--
+
+LOCK TABLES `peticiones_vacaciones` WRITE;
+/*!40000 ALTER TABLE `peticiones_vacaciones` DISABLE KEYS */;
+INSERT INTO `peticiones_vacaciones` VALUES
+(3,15,'2026-08-25','2026-08-27','2026-08-30','aprobada','vacaciones'),
+(4,15,'2026-08-27','2026-08-27','2026-08-27','Aprobada','Reclamo de días por antigüedad (8 días)'),
+(5,15,'2026-09-28','2026-09-28','2026-09-28','Rechazada','Reclamo de días por antigüedad (24 días)'),
+(6,15,'2026-09-28','2026-09-29','2026-10-01','Aprobada','voy a ver al barcelona'),
+(7,15,'2026-10-05','2026-10-05','2026-10-06','Pendiente','weqww');
+/*!40000 ALTER TABLE `peticiones_vacaciones` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'proteccion_civil'
+--
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2026-10-04 21:46:21

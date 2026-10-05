@@ -1,0 +1,347 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', 'Poppins', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #f7f6f5; 
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: block; /* Flujo normal para que la barra vaya arriba */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw; /* Fuerza a la barra a medir exactamente el ancho total de la pantalla */
+    padding: 15px 40px;
+    background-color: #f75d11; 
+    box-sizing: border-box;
+    margin-left: calc(-50vw + 50%); /* Centra perfectamente la barra rompiendo cualquier contenedor previo */
+}
+
+/* Contenedor que empuja el login hacia abajo y lo centra horizontalmente */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 40px 20px; /* Espacio superior e inferior respecto a la barra */
+    box-sizing: border-box;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo { width: 40px; height: 40px; }
+.brand-name { font-weight: bold; font-size: 1.2rem; color: #fcf8f8; }
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.login-link { text-decoration: none; color: #fcf9f9; font-weight: 500; }
+
+.register-btn {
+    background: ( #07236a,); 
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Estilo del botón de Salir */
+.btn-logout {
+    display: inline-block;
+    background-color: #dc3545; /* Rojo */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.btn-logout:hover {
+    background-color: #a71d2a; /* Rojo oscuro al pasar el mouse */
+}
+
+.container-logout {
+    text-align: right;
+    margin: 15px;
+}
+
+/* --- Encabezado --- */
+.encabezado-principal {
+    background: linear-gradient( #042d48);
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.contenido-encabezado h1 {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.contenido-encabezado p {
+    font-size: 14px;
+    margin-top: 8px;
+    color: #ecf0f1;
+    font-weight: 300;
+}
+
+/* --- Contenedor Principal --- */
+.contenedor-panel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.contenedor-panel2{
+    
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+.tarjeta {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* --- Sección Formulario --- */
+.seccion-formulario {
+    flex: 1;
+    min-width: 320px;
+}
+
+.seccion-formulario h2 {
+    font-size: 20px;
+    color: #041424;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f0f4f8;
+    padding-bottom: 10px;
+}
+
+.grupo-input {
+    margin-bottom: 15px;
+}
+
+.grupo-input label {
+    display: block;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.grupo-input input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #f8fafc;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.grupo-input input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+    background-color: #fff;
+}
+
+/* --- Sección Tabla --- */
+.seccion-tabla {
+    flex: 2.5;
+    min-width: 600px;
+}
+
+.seccion-tabla h2 {
+    font-size: 20px;
+    color: #05080c;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f0f4f8;
+    padding-bottom: 10px;
+}
+
+.tabla-responsiva {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 14px;
+}
+
+th {
+    background-color: #f8fafc;
+    color: #4a5568;
+    padding: 14px 16px;
+    font-weight: 600;
+    border-bottom: 2px solid #e2e8f0;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+}
+
+td {
+    padding: 16px;
+    border-bottom: 1px solid #edf2f7;
+    color: #2d3748;
+    vertical-align: middle;
+}
+
+tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+.password-oculta {
+    color: #a0aec0;
+    letter-spacing: 2px;
+}
+
+/* --- Botones y Acciones --- */
+.boton {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.1s, opacity 0.2s;
+}
+
+.boton:active {
+    transform: scale(0.96);
+}
+
+.boton-agregar {
+    width: 100%;
+    background-color: #2ecc71;
+    color: white;
+    padding: 14px;
+    font-size: 15px;
+    margin-top: 10px;
+    box-shadow: 0 2px 5px rgba(46, 204, 113, 0.3);
+}
+
+.boton-agregar:hover {
+    background-color: #27ae60;
+}
+
+.boton-editar {
+    background-color: #3498db;
+    color: white;
+    margin-right: 4px;
+}
+
+.boton-editar:hover {
+    background-color: #2980b9;
+}
+
+.boton-eliminar {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.boton-eliminar:hover {
+    background-color: #c0392b;
+}
+
+.boton_salir {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 20px; 
+    text-decoration: none; 
+    border-radius: 5px; 
+    font-weight: bold; 
+    font-family: sans-serif;
+}
+
+/* Contenedor que mantiene el header relativo para posicionar el botón */
+.contenido-encabezado {
+    position: relative; /* Esto es clave para que el botón sepa dónde es "derecha" */
+}
+
+/* Posiciona el botón a la derecha sin afectar al título */
+.contenedor-boton {
+    position: absolute;
+    top: 20px;    /* Ajusta esta distancia según necesites de arriba */
+    right: 20px;  /* Esto lo pega a la esquina derecha */
+}
+
+.boton-cerrar-sesion {
+    background-color: #e74c3c;
+    color: white !important;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.boton-cerrar-sesion:hover {
+    background-color: #c0392b;
+}
+
+/* --- Diseño Adaptable para Celulares --- */
+@media (max-width: 768px) {
+    .encabezado {
+        padding: 20px 10px;
+        margin-bottom: 20px;
+    }
+    .encabezado h1 { font-size: 20px; }
+    
+    .contenedor {
+        flex-direction: column; /* Pone el formulario arriba y la tabla abajo */
+        gap: 20px;
+        padding: 0 10px;
+    }
+    
+    .columna-formulario, .columna-tabla { 
+        min-width: 100%; 
+    }
+    
+    .tarjeta {
+        padding: 15px;
+    }
+    
+    td, th {
+        padding: 8px; /* Reduce el espacio en la tabla para que sea más compacta */
+        font-size: 12px;
+}
+}
+

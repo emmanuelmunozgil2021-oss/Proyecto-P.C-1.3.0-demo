@@ -1,0 +1,210 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+:root {
+    --primary: #2563eb;
+    --bg: #f7f7f7;
+    --text: #1e293b;
+    --card-bg: #f4f2f2;
+}
+
+body {
+    font-family: 'Segoe UI','Poppins' sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+}
+
+.navbar {
+    background: #f75d11;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.panel-container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+/* Grilla para el Estado de Vacaciones */
+.balance-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    text-align: center;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 1.5rem;
+}
+
+.balance-item .number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.balance-item .label {
+    color: #64748b;
+    font-weight: 600;
+}
+
+/* Grilla para Trámites */
+.actions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.action-box {
+    border: 1px solid #e2e8f0;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s;
+}
+
+.action-box:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    margin: 0.5rem 0;
+    box-sizing: border-box;
+}
+
+.btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+}
+
+.btn-logout {
+    display: inline-block;
+    background-color: #07236a; /* Rojo profesional */
+    color: white !important;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+/* Efecto al pasar el mouse */
+.btn-logout:hover {
+    background-color: #dc2626; /* Un tono de rojo más oscuro */
+    transform: translateY(-2px);
+}
+
+.nav-user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+}
+
+/* --- NOTIFICACIONES CON CSS PURO (SIN JAVASCRIPT) --- */
+.notif-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Ocultamos el checkbox real pero dejamos que controle el estado */
+.notif-toggle {
+    display: none;
+}
+
+/* El botón de la campana actúa como un label del checkbox */
+.notif-btn {
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+
+/* El menú desplegable está oculto por defecto */
+.notif-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    width: 300px;
+    background: #fff;
+    color: #333;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+/* TRUCO CSS: Cuando el checkbox está marcado (~), se muestra el menú */
+.notif-toggle:checked ~ .notif-dropdown {
+    display: block;
+}
+
+.notif-header {
+    background: #007bff;
+    color: white;
+    padding: 10px 15px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.notif-item {
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+    font-size: 13px;
+}
+
+.notif-item:last-child {
+    border-bottom: none;
+}
+
+.badge-aprobada { color: #28a745; font-weight: bold; }
+.badge-pendiente { color: #f0ad4e; font-weight: bold; }
+.badge-rechazada { color: #d9534f; font-weight: bold; }
+
+.btn-volver {
+    display: inline-block;
+    width: 100%; /* Si quieres que ocupe todo el ancho igual que el botón de enviar, o quítalo si prefieres que sea un botón mediano */
+    text-align: center;
+    padding: 12px;
+    background-color: #6c757d;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+.btn-volver:hover {
+    background-color: #5a6268;
+}
